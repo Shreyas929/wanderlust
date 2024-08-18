@@ -1,0 +1,77 @@
+.fa-compass{
+    color:#dc3545 !important;
+    font-size: 2.2rem;
+}
+.nav-link{
+    color: #222222e1;
+    font-size: 1.2rem;
+}
+.f-info{
+    height: 8rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+    text-align: center;
+}
+.f-info-socials .f-info-links{
+    width: 100%;
+}
+.f-info-socials{
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+}
+.f-info-socials i{
+    margin-left: 1.5rem;
+}
+body{
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+.container{
+    flex: 1;
+}
+footer {
+    background-color: #ebebeb;
+    text-align: center;
+    padding: 1rem;
+}
+.navbar{
+    margin-bottom: 20px;
+}
+.cardhover:hover{
+  opacity: 0.75;
+}
+.card-listing{
+    border-color: white;
+}
+#map{
+    width: 500px;
+    height: 300px;
+    border-radius: 2px;
+}
+.categories {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-around;
+}
+.categories div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.57);
+    cursor: pointer;
+}
+.categories div:hover{
+    color: black;
+    text-decoration: underline;
+}

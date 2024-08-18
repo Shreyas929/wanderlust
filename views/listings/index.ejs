@@ -1,0 +1,82 @@
+<% layout('boilerplate') -%> 
+<body>
+    <div class="categories">
+        <form action="/listings/beach" method="POST" id="beachForm" class="form">
+            <div class="beach">
+                <i class="fa-solid fa-umbrella-beach"></i>
+                <p>Beachfront</p>
+            </div>
+        </form>
+        <form action="/listings/farm" method="POST" id="farmForm" class="form">
+            <div class="farm">
+                <i class="fa-solid fa-tractor"></i>
+                <p>Farm</p>
+            </div>
+        </form>
+        <form action="/listings/tropical" method="POST" id="tropicalForm" class="form">
+            <div class="countryside">
+                <i class="fa-solid fa-tree"></i>
+                <p>Tropical</p>
+            </div>
+        </form>
+        <form action="/listings/cities" method="POST" id="citiesForm" class="form">
+            <div class="cities">
+                <i class="fa-solid fa-city"></i>
+                <p>Topcities</p>
+            </div>
+        </form>
+        <form action="/listings/camping" method="POST" id="campingForm" class="form">
+            <div class="camping">
+                <i class="fa-solid fa-campground"></i>
+                <p>Camping</p>
+            </div>
+        </form>
+        <form action="/listings/artic" method="POST" id="articForm" class="form">
+            <div class="artic">
+                <i class="fa-solid fa-snowflake"></i>
+                <p>Artic</p>
+            </div>
+        </form>
+        <form action="/listings/lake" method="POST" id="lakeForm" class="form">
+            <div class="lake">
+                <i class="fa-solid fa-water"></i>
+                <p>Lakefront</p>
+            </div>
+        </form>
+        <form action="/listings/historical" method="POST" id="historicalForm" class="form">
+            <div class="historical">
+                <i class="fa-solid fa-landmark-dome"></i>
+                <p>Historical</p>
+            </div>
+        </form>
+    </div>
+    <div class="container">
+        <h3 class="text-center my-4">All Listings</h3>
+        <div class="row justify-content-center">
+            <% for(let listing of allListings) { %>
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-4 d-flex align-items-stretch">
+                    <a href="/listings/<%= listing._id %>" style="text-decoration: none; color: inherit; width: 90%;">
+                        <div class="card mx-auto cardhover card-listing" style="width: 100%;">
+                            <img src="<%= listing.image.url %>" class="card-img-top img-fluid w-100" alt="listings" style="height: 20rem; object-fit: cover;">
+                            <div class="card-body text-center">
+                                <h5 class="card-title"><%= listing.title %></h5>
+                                <p class="card-text">
+                                    &#8377; <%= listing.price.toLocaleString("en-IN") %> / NIGHT
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</body>
+<script>
+    // Assign event listeners to each div inside the form
+    document.querySelectorAll('.form > div').forEach(div => {
+        div.addEventListener('click', function() {
+            this.closest('form').submit();
+        });
+    });
+</script>
+
