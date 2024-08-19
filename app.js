@@ -80,12 +80,14 @@ app.use((req, res, next) => {
   res.locals.currUser=req.user;
   next();
 });
+
 app.get("/", (req, res) => {
   res.send("Hi, I am root");
 });
+
 app.use("/listings", listingsRouter);
-app.use("/listings:id/reviews", reviewRouter);
-app.use("/listings", userRouter);
+app.use("/listings/:id/reviews", reviewRouter);
+app.use("/", userRouter);
 
 app.all("*", (req, res, next) => {
   next(new ExpressError(404, "Page Not Found!!"));
