@@ -80,7 +80,9 @@ app.use((req, res, next) => {
   res.locals.currUser=req.user;
   next();
 });
-app.use("/", listingsRouter);
+app.get("/", (req, res) => {
+  res.send("Hi, I am root");
+});
 app.use("/listings", listingsRouter);
 app.use("/listings:id/reviews", reviewRouter);
 app.use("/listings", userRouter);
